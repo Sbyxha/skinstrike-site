@@ -3,201 +3,141 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkinStrike — Магазин Скинов</title>
-  <link rel="stylesheet" href="style.css">
+  <title>SkinStrike - Магазин CS:GO скинов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <!-- Навбар -->
-  <header>
-    <div class="logo">SkinStrike</div>
-    <nav>
-      <a href="#">Главная</a>
-      <a href="#">Скины</a>
-      <a href="https://t.me/sbyxha" target="_blank">Связаться: @sbyxha</a>
-    </nav>
-  </header>
+<body class="bg-gradient-to-b from-gray-900 to-gray-800 text-white font-sans">
 
   <!-- Хедер -->
-  <section class="hero">
-    <h1>Добро пожаловать в SkinStrike</h1>
-    <p>Лучшие скины CS:GO по цене 100,000 сум</p>
-    <a href="#skins" class="btn">Смотреть скины</a>
+  <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-cyan-400">SkinStrike</h1>
+      <nav class="space-x-6">
+        <a href="#skins" class="hover:text-cyan-400 transition">Скины</a>
+        <a href="#cart" class="hover:text-cyan-400 transition">Корзина (<span id="cart-count">0</span>)</a>
+        <a href="#about" class="hover:text-cyan-400 transition">О нас</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Главный баннер -->
+  <section class="text-center py-20 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600">
+    <h2 class="text-4xl font-extrabold mb-4 text-white">Продажа лучших скинов CS:GO</h2>
+    <p class="text-lg mb-6 text-gray-100">Купи дешёвые скины по выгодной цене прямо сейчас!</p>
+    <a href="#skins" class="bg-cyan-500 hover:bg-cyan-600 text-black px-6 py-3 rounded-xl font-bold transition">Перейти в магазин</a>
   </section>
 
-  <!-- Каталог -->
-  <section id="skins" class="skins">
-    <h2>🔥 Наши Скины</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="https://cdn.cloudflare.steamstatic.com/apps/csgo/images/skillgroups/icon5.png" alt="AK-47">
-        <h3>AK-47 | Redline</h3>
-        <p class="price">100,000 сум</p>
-        <button class="buy-btn">Купить</button>
+  <!-- Секция скинов -->
+  <section id="skins" class="container mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10 text-cyan-400">Популярные скины</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Карточка скина 1 -->
+      <div class="bg-gray-800 rounded-2xl shadow-xl hover:shadow-cyan-500/50 transition overflow-hidden">
+        <img src="ТВОЕ_ИЗОБРАЖЕНИЕ_1" alt="Название скина 1" class="w-full h-48 object-contain bg-gray-900">
+        <div class="p-4">
+          <h4 class="text-xl font-bold text-cyan-400">Название скина 1</h4>
+          <p class="text-cyan-200 font-semibold mb-2">Цена</p>
+          <button onclick="addToCart('Название скина 1', 100000)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded-xl transition">В корзину</button>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://cdn.cloudflare.steamstatic.com/apps/csgo/images/skillgroups/icon7.png" alt="AWP">
-        <h3>AWP | Asiimov</h3>
-        <p class="price">100,000 сум</p>
-        <button class="buy-btn">Купить</button>
+
+      <!-- Карточка скина 2 -->
+      <div class="bg-gray-800 rounded-2xl shadow-xl hover:shadow-cyan-500/50 transition overflow-hidden">
+        <img src="ТВОЕ_ИЗОБРАЖЕНИЕ_2" alt="Название скина 2" class="w-full h-48 object-contain bg-gray-900">
+        <div class="p-4">
+          <h4 class="text-xl font-bold text-cyan-400">Название скина 2</h4>
+          <p class="text-cyan-200 font-semibold mb-2">Цена</p>
+          <button onclick="addToCart('Название скина 2', 100000)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded-xl transition">В корзину</button>
+        </div>
       </div>
-      <div class="card">
-        <img src="https://cdn.cloudflare.steamstatic.com/apps/csgo/images/skillgroups/icon8.png" alt="M4A4">
-        <h3>M4A4 | Howl</h3>
-        <p class="price">100,000 сум</p>
-        <button class="buy-btn">Купить</button>
+
+      <!-- Карточка скина 3 -->
+      <div class="bg-gray-800 rounded-2xl shadow-xl hover:shadow-cyan-500/50 transition overflow-hidden">
+        <img src="ТВОЕ_ИЗОБРАЖЕНИЕ_3" alt="Название скина 3" class="w-full h-48 object-contain bg-gray-900">
+        <div class="p-4">
+          <h4 class="text-xl font-bold text-cyan-400">Название скина 3</h4>
+          <p class="text-cyan-200 font-semibold mb-2">Цена</p>
+          <button onclick="addToCart('Название скина 3', 100000)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-2 px-4 rounded-xl transition">В корзину</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Корзина -->
+  <section id="cart" class="bg-gray-800 py-16 px-4">
+    <div class="container mx-auto">
+      <h3 class="text-3xl font-bold text-center mb-6 text-cyan-400">Корзина</h3>
+      <div id="cart-items" class="text-gray-300 text-lg text-center">Корзина пуста</div>
+      <div id="cart-total" class="text-center mt-6 text-xl font-bold text-cyan-400"></div>
+      <div class="text-center mt-6">
+        <button onclick="checkout()" class="bg-cyan-500 hover:bg-cyan-600 text-black font-bold py-3 px-6 rounded-xl transition">Оплатить</button>
       </div>
     </div>
   </section>
 
+  <!-- О нас -->
+  <section id="about" class="bg-gray-900 py-16 px-4">
+    <div class="container mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6 text-cyan-400">О нас</h3>
+      <p class="max-w-2xl mx-auto text-gray-300">SkinStrike – это платформа для покупки достуаных скинов CS:GO. Мы предлагаем только проверенные и безопасные сделки, чтобы ты мог наслаждаться игрой с крутыми скинами.</p>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <section id="contacts" class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto text-center">
+      <h2 class="text-2xl font-bold mb-4 text-cyan-400">Связаться со мной по поводу сделок</h2>
+      <p class="mb-2">Пиши в Telegram:</p>
+      <a href="https://t.me/sbyxha" 
+         class="bg-cyan-500 text-black px-6 py-2 rounded-lg hover:bg-cyan-600 transition">
+         📩 Мой Telegram (@sbyxha)
+      </a>
+    </div>
+  </section>
+
   <!-- Футер -->
-  <footer>
-    <p>© 2025 SkinStrike | Контакт: <a href="https://t.me/sbyxha">@sbyxha</a></p>
+  <footer class="bg-gray-900 text-center p-6 text-gray-400">
+    © 2025 SkinStrike. Все права защищены.
   </footer>
+
+  <script>
+    let cart = [];
+
+    function addToCart(name, price) {
+      cart.push({ name, price });
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsDiv = document.getElementById('cart-items');
+      const cartCount = document.getElementById('cart-count');
+      const cartTotal = document.getElementById('cart-total');
+
+      if (cart.length === 0) {
+        cartItemsDiv.innerHTML = "Корзина пуста";
+        cartTotal.innerHTML = "";
+        cartCount.innerText = 0;
+        return;
+      }
+
+      cartItemsDiv.innerHTML = cart.map(item => `<p>${item.name} - $${item.price}</p>`).join("");
+      const total = cart.reduce((sum, item) => sum + item.price, 0);
+      cartTotal.innerHTML = `Итого: $${total}`;
+      cartCount.innerText = cart.length;
+    }
+
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Корзина пуста!");
+        return;
+      }
+      alert("Спасибо за покупку! (Оплата в демо-режиме)");
+      cart = [];
+      updateCart();
+    }
+  </script>
 </body>
 </html>
-/* Общий стиль */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0d0d0d;
-  color: #fff;
-}
-
-/* Хедер */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background: #111;
-  box-shadow: 0 0 15px #8a2be2;
-  position: sticky;
-  top: 0;
-}
-
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #8a2be2;
-}
-
-header nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #ccc;
-  transition: 0.3s;
-}
-
-header nav a:hover {
-  color: #8a2be2;
-}
-
-/* Hero */
-.hero {
-  text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #111, #0d0d0d);
-}
-
-.hero h1 {
-  font-size: 48px;
-  color: #fff;
-  text-shadow: 0 0 15px #8a2be2;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #bbb;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #8a2be2;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #a64dff;
-  box-shadow: 0 0 15px #8a2be2;
-}
-
-/* Каталог */
-.skins {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.skins h2 {
-  font-size: 32px;
-  margin-bottom: 40px;
-  text-shadow: 0 0 10px #8a2be2;
-}
-
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
-}
-
-.card {
-  background: #1a1a1a;
-  border-radius: 12px;
-  padding: 20px;
-  width: 260px;
-  box-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 25px rgba(138, 43, 226, 0.8);
-}
-
-.card img {
-  width: 100%;
-  border-radius: 8px;
-}
-
-.card h3 {
-  margin: 15px 0 10px;
-  font-size: 20px;
-}
-
-.price {
-  font-size: 18px;
-  color: #8a2be2;
-  margin-bottom: 15px;
-}
-
-.buy-btn {
-  padding: 10px 20px;
-  background: #8a2be2;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.buy-btn:hover {
-  background: #a64dff;
-  box-shadow: 0 0 15px #8a2be2;
-}
-
-/* Футер */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  color: #888;
-  margin-top: 50px;
-}
